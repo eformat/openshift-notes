@@ -1,0 +1,156 @@
+{"0": {
+    "doc": "Ovn-kubernetes",
+    "title": "OVNKubernetes",
+    "hpath": "openshift.ovn-kubernetes",
+    "content": "Ovn-k8s . | https://docs.google.com/presentation/d/1KB70hj14qfGwUCwokC0B8NIq4aLloUF_FZX95OpdOM0/edit#slide=id.g97711cdf43_0_49 | . Ovn-k8s traffic flows . | https://docs.google.com/presentation/d/1f27VDoJKdYrmnXaFtz6M3Ic5ioy9MKTG8G8IVpLWcIc/edit#slide=id.p | . ACL’s, NetworkPolicy, debug . | https://github.com/ovn-org/ovn-kubernetes/issues/1635 | . debug . oc rsh -n openshift-ovn-kubernetes ovnkube-master-66p55 ovn-nbctl list port_group ovn-nbctl acl-list &lt;_uuid&gt; ovn-nbctl list address_set . ",
+    "url": "http://localhost:4000/notes/1599c4d6-e0eb-4c51-a7f5-b5ebf443dd5c.html#ovnkubernetes",
+    "relUrl": "/notes/1599c4d6-e0eb-4c51-a7f5-b5ebf443dd5c.html#ovnkubernetes"
+  },"1": {
+    "doc": "Ovn-kubernetes",
+    "title": "Ovn-kubernetes",
+    "hpath": "openshift.ovn-kubernetes",
+    "content": " ",
+    "url": "http://localhost:4000/notes/1599c4d6-e0eb-4c51-a7f5-b5ebf443dd5c.html",
+    "relUrl": "/notes/1599c4d6-e0eb-4c51-a7f5-b5ebf443dd5c.html"
+  },"2": {
+    "doc": "Tags",
+    "title": "Images",
+    "hpath": "images.tags",
+    "content": "search tags . curl -s -k -L https://registry.access.redhat.com/v2/ubi8/ubi-minimal/tags/list | python -m json.tool . ",
+    "url": "http://localhost:4000/notes/20ba9827-91fb-4f74-b6ec-e069ab12df39.html#images",
+    "relUrl": "/notes/20ba9827-91fb-4f74-b6ec-e069ab12df39.html#images"
+  },"3": {
+    "doc": "Tags",
+    "title": "Tags",
+    "hpath": "images.tags",
+    "content": " ",
+    "url": "http://localhost:4000/notes/20ba9827-91fb-4f74-b6ec-e069ab12df39.html",
+    "relUrl": "/notes/20ba9827-91fb-4f74-b6ec-e069ab12df39.html"
+  },"4": {
+    "doc": "Images",
+    "title": "Images",
+    "hpath": "images",
+    "content": " ",
+    "url": "http://localhost:4000/notes/3d02a528-2614-4d45-ba3c-bb20e24d4456.html",
+    "relUrl": "/notes/3d02a528-2614-4d45-ba3c-bb20e24d4456.html"
+  },"5": {
+    "doc": 404,
+    "title": "404",
+    "hpath": null,
+    "content": "Page not found . ",
+    "url": "http://localhost:4000/404.html#404",
+    "relUrl": "/404.html#404"
+  },"6": {
+    "doc": 404,
+    "title": 404,
+    "hpath": null,
+    "content": " ",
+    "url": "http://localhost:4000/404.html",
+    "relUrl": "/404.html"
+  },"7": {
+    "doc": "Openshift",
+    "title": "OpenShift",
+    "hpath": "openshift",
+    "content": ". ",
+    "url": "http://localhost:4000/notes/4f3f4a54-ac7a-42d9-9124-32995af66b17.html#openshift",
+    "relUrl": "/notes/4f3f4a54-ac7a-42d9-9124-32995af66b17.html#openshift"
+  },"8": {
+    "doc": "Openshift",
+    "title": "Openshift",
+    "hpath": "openshift",
+    "content": " ",
+    "url": "http://localhost:4000/notes/4f3f4a54-ac7a-42d9-9124-32995af66b17.html",
+    "relUrl": "/notes/4f3f4a54-ac7a-42d9-9124-32995af66b17.html"
+  },"9": {
+    "doc": "Agents",
+    "title": "Agent Builds",
+    "hpath": "openshift.jenkins.agents",
+    "content": "cd /home/mike/git/containers-quickstarts/jenkins-agents/jenkins-agent-mvn-mandrel podman build -t jenkins-agent-mvn-mandrel . podman tag jenkins-agent-mvn-mandrel quay.io/eformat/jenkins-agent-mvn-mandrel:latest podman push quay.io/eformat/jenkins-agent-mvn-mandrel:latest cd /home/mike/git/containers-quickstarts/jenkins-agents/jenkins-agent-npm podman build -t jenkins-agent-npm . podman tag jenkins-agent-npm quay.io/eformat/jenkins-agent-npm:latest podman push quay.io/eformat/jenkins-agent-npm:latest . ",
+    "url": "http://localhost:4000/notes/515bb002-b7ae-4b38-9a3e-fcd1be141368.html#agent-builds",
+    "relUrl": "/notes/515bb002-b7ae-4b38-9a3e-fcd1be141368.html#agent-builds"
+  },"10": {
+    "doc": "Agents",
+    "title": "Agents",
+    "hpath": "openshift.jenkins.agents",
+    "content": " ",
+    "url": "http://localhost:4000/notes/515bb002-b7ae-4b38-9a3e-fcd1be141368.html",
+    "relUrl": "/notes/515bb002-b7ae-4b38-9a3e-fcd1be141368.html"
+  },"11": {
+    "doc": "Serverless",
+    "title": "Serverless",
+    "hpath": "openshift.serverless",
+    "content": " ",
+    "url": "http://localhost:4000/notes/733b8abb-93e5-4d4c-99d4-dbf112f54663.html",
+    "relUrl": "/notes/733b8abb-93e5-4d4c-99d4-dbf112f54663.html"
+  },"12": {
+    "doc": "Jenkins",
+    "title": "Jenkins",
+    "hpath": "openshift.jenkins",
+    "content": " ",
+    "url": "http://localhost:4000/notes/9a475d07-22b2-4aa5-bbd4-a832281a9d5f.html",
+    "relUrl": "/notes/9a475d07-22b2-4aa5-bbd4-a832281a9d5f.html"
+  },"13": {
+    "doc": "Hashicorp",
+    "title": "Hashicorp",
+    "hpath": "hashicorp",
+    "content": " ",
+    "url": "http://localhost:4000/notes/b3c620b1-23f2-436b-8887-1c2b0c0f5cc4.html",
+    "relUrl": "/notes/b3c620b1-23f2-436b-8887-1c2b0c0f5cc4.html"
+  },"14": {
+    "doc": "Functions",
+    "title": "Serverless Functions",
+    "hpath": "openshift.serverless.functions",
+    "content": "https://github.com/boson-project https://docs.google.com/document/d/1CI-U_sF7b4AbNvAJo2H4Q0Hhf9J2g0DBPTGXWDkWWKg . ",
+    "url": "http://localhost:4000/notes/b9946a4e-b8b8-4e71-93eb-9e460625aed3.html#serverless-functions",
+    "relUrl": "/notes/b9946a4e-b8b8-4e71-93eb-9e460625aed3.html#serverless-functions"
+  },"15": {
+    "doc": "Functions",
+    "title": "Functions",
+    "hpath": "openshift.serverless.functions",
+    "content": " ",
+    "url": "http://localhost:4000/notes/b9946a4e-b8b8-4e71-93eb-9e460625aed3.html",
+    "relUrl": "/notes/b9946a4e-b8b8-4e71-93eb-9e460625aed3.html"
+  },"16": {
+    "doc": "dnsmasq",
+    "title": "dnsmasq",
+    "hpath": "openshift.dnsmasq",
+    "content": "bugs . https://bugzilla.redhat.com/show_bug.cgi?id=1608571 . cd /etc/systemd/system/dnsmasq.service.d cat override.conf [Service] LimitNOFILE=65535 . ",
+    "url": "http://localhost:4000/notes/d7e8f0f7-0121-4873-8277-e2e851f3c151.html",
+    "relUrl": "/notes/d7e8f0f7-0121-4873-8277-e2e851f3c151.html"
+  },"17": {
+    "doc": "Vault",
+    "title": "Hashicorp Vault",
+    "hpath": "hashicorp.vault",
+    "content": "https://www.openshift.com/blog/integrating-hashicorp-vault-in-openshift-4 https://medium.com/@salmaan.rashid/mtls-using-hashcorp-vaults-pki-secrets-f3ef6308bda3 . ",
+    "url": "http://localhost:4000/notes/f4991726-6531-4809-a45f-ac5e63b3108c.html#hashicorp-vault",
+    "relUrl": "/notes/f4991726-6531-4809-a45f-ac5e63b3108c.html#hashicorp-vault"
+  },"18": {
+    "doc": "Vault",
+    "title": "Vault",
+    "hpath": "hashicorp.vault",
+    "content": " ",
+    "url": "http://localhost:4000/notes/f4991726-6531-4809-a45f-ac5e63b3108c.html",
+    "relUrl": "/notes/f4991726-6531-4809-a45f-ac5e63b3108c.html"
+  },"19": {
+    "doc": "Root",
+    "title": "OpenShift Notes",
+    "hpath": "root",
+    "content": "Mike’s OpenShift notes . ",
+    "url": "http://localhost:4000/#openshift-notes",
+    "relUrl": "/#openshift-notes"
+  },"20": {
+    "doc": "Root",
+    "title": "Table of Contents",
+    "hpath": "root",
+    "content": " ",
+    "url": "http://localhost:4000/#table-of-contents",
+    "relUrl": "/#table-of-contents"
+  },"21": {
+    "doc": "Root",
+    "title": "Root",
+    "hpath": "root",
+    "content": " ",
+    "url": "http://localhost:4000/",
+    "relUrl": "/"
+  }
+}
