@@ -2,7 +2,7 @@
     "doc": "Ovn-kubernetes",
     "title": "OVNKubernetes",
     "hpath": "openshift.ovn-kubernetes",
-    "content": "Ovn-k8s . | https://docs.google.com/presentation/d/1KB70hj14qfGwUCwokC0B8NIq4aLloUF_FZX95OpdOM0/edit#slide=id.g97711cdf43_0_49 | . Ovn-k8s traffic flows . | https://docs.google.com/presentation/d/1f27VDoJKdYrmnXaFtz6M3Ic5ioy9MKTG8G8IVpLWcIc/edit#slide=id.p | . ACL’s, NetworkPolicy, debug . | https://github.com/ovn-org/ovn-kubernetes/issues/1635 | . debug . oc rsh -n openshift-ovn-kubernetes ovnkube-master-66p55 ovn-nbctl list port_group ovn-nbctl acl-list &lt;_uuid&gt; ovn-nbctl list address_set . ",
+    "content": "Ovn-k8s . | https://docs.google.com/presentation/d/1KB70hj14qfGwUCwokC0B8NIq4aLloUF_FZX95OpdOM0/edit#slide=id.g97711cdf43_0_49 | . Ovn-k8s traffic flows . | https://docs.google.com/presentation/d/1f27VDoJKdYrmnXaFtz6M3Ic5ioy9MKTG8G8IVpLWcIc/edit#slide=id.p | . ACL’s, NetworkPolicy, debug . | https://github.com/ovn-org/ovn-kubernetes/issues/1635 | . debug . oc rsh -n openshift-ovn-kubernetes ovnkube-master-66p55 ovn-nbctl list port_group ovn-nbctl acl-list &lt;_uuid&gt; ovn-nbctl list address_set . migrate a cluster from ovs . https://docs.openshift.com/container-platform/4.5/networking/ovn_kubernetes_network_provider/migrate-from-openshift-sdn.html . oc get Network.config.openshift.io cluster -o yaml &gt; cluster-openshift-sdn.yaml oc annotate Network.operator.openshift.io cluster 'networkoperator.openshift.io/network-migration'=\"\" oc patch Network.config.openshift.io cluster --type='merge' --patch '{ \"spec\": { \"networkType\": \"OVNKubernetes\" } }' watch oc get pod -n openshift-sdn #!/bin/bash for ip in $(oc get nodes -o jsonpath='{.items[*].status.addresses[?(@.type==\"InternalIP\")].address}') do echo \"reboot node $ip\" ssh -o StrictHostKeyChecking=no core@$ip sudo shutdown -r -t 3 done -- ssh hades ocp4.sh stop ocp4.sh start -- oc get network.config/cluster -o jsonpath='{.status.networkType}{\"\\n\"}' oc get pods --all-namespaces -o wide --sort-by='{.spec.nodeName}' oc annotate Network.operator.openshift.io cluster networkoperator.openshift.io/network-migration- oc delete namespace openshift-sdn . ",
     "url": "http://localhost:4000/notes/1599c4d6-e0eb-4c51-a7f5-b5ebf443dd5c.html#ovnkubernetes",
     "relUrl": "/notes/1599c4d6-e0eb-4c51-a7f5-b5ebf443dd5c.html#ovnkubernetes"
   },"1": {
@@ -27,125 +27,265 @@
     "url": "http://localhost:4000/notes/20ba9827-91fb-4f74-b6ec-e069ab12df39.html",
     "relUrl": "/notes/20ba9827-91fb-4f74-b6ec-e069ab12df39.html"
   },"4": {
-    "doc": "Images",
-    "title": "Images",
-    "hpath": "images",
-    "content": " ",
-    "url": "http://localhost:4000/notes/3d02a528-2614-4d45-ba3c-bb20e24d4456.html",
-    "relUrl": "/notes/3d02a528-2614-4d45-ba3c-bb20e24d4456.html"
+    "doc": "Cincinatti",
+    "title": "Graphs",
+    "hpath": "openshift.cincinatti",
+    "content": ". | https://cincinnati-web-graph.op.redhat.com/ | https://ctron.github.io/openshift-update-graph/ | . ",
+    "url": "http://localhost:4000/notes/29b95cfe-f153-4a63-a9a6-391126082e56.html#graphs",
+    "relUrl": "/notes/29b95cfe-f153-4a63-a9a6-391126082e56.html#graphs"
   },"5": {
+    "doc": "Cincinatti",
+    "title": "Cincinatti",
+    "hpath": "openshift.cincinatti",
+    "content": " ",
+    "url": "http://localhost:4000/notes/29b95cfe-f153-4a63-a9a6-391126082e56.html",
+    "relUrl": "/notes/29b95cfe-f153-4a63-a9a6-391126082e56.html"
+  },"6": {
+    "doc": "Kam",
+    "title": "KAM",
+    "hpath": "openshift.tekton.kam",
+    "content": "https://github.com/redhat-developer/kam/blob/master/docs/README.md#steps . ",
+    "url": "http://localhost:4000/notes/35609d77-dff5-4906-a356-c2daba102fe8.html#kam",
+    "relUrl": "/notes/35609d77-dff5-4906-a356-c2daba102fe8.html#kam"
+  },"7": {
+    "doc": "Kam",
+    "title": "Kam",
+    "hpath": "openshift.tekton.kam",
+    "content": " ",
+    "url": "http://localhost:4000/notes/35609d77-dff5-4906-a356-c2daba102fe8.html",
+    "relUrl": "/notes/35609d77-dff5-4906-a356-c2daba102fe8.html"
+  },"8": {
+    "doc": "Rfes",
+    "title": "RFE",
+    "hpath": "openshift.rfes",
+    "content": "OpenShift RFE’s . | https://issues.redhat.com/browse/RFE | . Project = RFE AND component = “Network Edge” . | https://issues.redhat.com/browse/RFE-100?jql=project%20%3D%20RFE%20AND%20component%20%3D%20%22Network%20Edge%22 | . ",
+    "url": "http://localhost:4000/notes/38208509-7864-4974-a702-600a6040bb0a.html#rfe",
+    "relUrl": "/notes/38208509-7864-4974-a702-600a6040bb0a.html#rfe"
+  },"9": {
+    "doc": "Rfes",
+    "title": "Interesting RFE’s",
+    "hpath": "openshift.rfes",
+    "content": "Make Service External IP highly available again . | https://issues.redhat.com/browse/RFE-1297 | . ha proxy router should have some of the variables configurable . | https://issues.redhat.com/browse/RFE-1109 | . Expose ROUTER_ENABLE_COMPRESSION to allow for gzip compression . | https://issues.redhat.com/browse/RFE-1017 | . Make it possible to run multiple OCP Routers on the same node . | https://issues.redhat.com/browse/RFE-382 | . Allow different subnet Static IPs for External Project Traffic . | https://issues.redhat.com/browse/RFE-362 | . ",
+    "url": "http://localhost:4000/notes/38208509-7864-4974-a702-600a6040bb0a.html#interesting-rfes",
+    "relUrl": "/notes/38208509-7864-4974-a702-600a6040bb0a.html#interesting-rfes"
+  },"10": {
+    "doc": "Rfes",
+    "title": "Rfes",
+    "hpath": "openshift.rfes",
+    "content": " ",
+    "url": "http://localhost:4000/notes/38208509-7864-4974-a702-600a6040bb0a.html",
+    "relUrl": "/notes/38208509-7864-4974-a702-600a6040bb0a.html"
+  },"11": {
     "doc": 404,
     "title": "404",
     "hpath": null,
     "content": "Page not found . ",
     "url": "http://localhost:4000/404.html#404",
     "relUrl": "/404.html#404"
-  },"6": {
+  },"12": {
     "doc": 404,
     "title": 404,
     "hpath": null,
     "content": " ",
     "url": "http://localhost:4000/404.html",
     "relUrl": "/404.html"
-  },"7": {
+  },"13": {
+    "doc": "Images",
+    "title": "Images",
+    "hpath": "images",
+    "content": " ",
+    "url": "http://localhost:4000/notes/4ca53db3-ff6e-4680-b972-31400db8791f.html",
+    "relUrl": "/notes/4ca53db3-ff6e-4680-b972-31400db8791f.html"
+  },"14": {
     "doc": "Openshift",
     "title": "OpenShift",
     "hpath": "openshift",
     "content": ". ",
     "url": "http://localhost:4000/notes/4f3f4a54-ac7a-42d9-9124-32995af66b17.html#openshift",
     "relUrl": "/notes/4f3f4a54-ac7a-42d9-9124-32995af66b17.html#openshift"
-  },"8": {
+  },"15": {
     "doc": "Openshift",
     "title": "Openshift",
     "hpath": "openshift",
     "content": " ",
     "url": "http://localhost:4000/notes/4f3f4a54-ac7a-42d9-9124-32995af66b17.html",
     "relUrl": "/notes/4f3f4a54-ac7a-42d9-9124-32995af66b17.html"
-  },"9": {
+  },"16": {
     "doc": "Agents",
     "title": "Agent Builds",
     "hpath": "openshift.jenkins.agents",
     "content": "cd /home/mike/git/containers-quickstarts/jenkins-agents/jenkins-agent-mvn-mandrel podman build -t jenkins-agent-mvn-mandrel . podman tag jenkins-agent-mvn-mandrel quay.io/eformat/jenkins-agent-mvn-mandrel:latest podman push quay.io/eformat/jenkins-agent-mvn-mandrel:latest cd /home/mike/git/containers-quickstarts/jenkins-agents/jenkins-agent-npm podman build -t jenkins-agent-npm . podman tag jenkins-agent-npm quay.io/eformat/jenkins-agent-npm:latest podman push quay.io/eformat/jenkins-agent-npm:latest . ",
     "url": "http://localhost:4000/notes/515bb002-b7ae-4b38-9a3e-fcd1be141368.html#agent-builds",
     "relUrl": "/notes/515bb002-b7ae-4b38-9a3e-fcd1be141368.html#agent-builds"
-  },"10": {
+  },"17": {
     "doc": "Agents",
     "title": "Agents",
     "hpath": "openshift.jenkins.agents",
     "content": " ",
     "url": "http://localhost:4000/notes/515bb002-b7ae-4b38-9a3e-fcd1be141368.html",
     "relUrl": "/notes/515bb002-b7ae-4b38-9a3e-fcd1be141368.html"
-  },"11": {
+  },"18": {
+    "doc": "Efs",
+    "title": "EFS",
+    "hpath": "openshift.aws.efs",
+    "content": "efs-create.sh . #!/bin/bash region=$(aws ec2 describe-availability-zones --output text --query 'AvailabilityZones[0].[RegionName]') vpcid=$(aws ec2 describe-vpcs --region=${region} | jq -r '.Vpcs[0].VpcId') vpcname=$(aws ec2 describe-vpcs --region=${region} |jq -r '.Vpcs[0].Tags[0].Value') fsid=$(aws efs create-file-system --performance-mode=generalPurpose --encrypted --tags Key=Name,Value=ocp-efs | jq --raw-output '.FileSystemId') cidr_block=$(aws ec2 describe-vpcs --vpc-ids ${vpcid} --query \"Vpcs[].CidrBlock\" --output text) mount_target_group_name=\"ec2-efs-group\" mount_target_group_desc=\"NFS access to EFS from EC2 worker nodes\" mount_target_group_id=$(aws ec2 create-security-group --group-name $mount_target_group_name --description \"${mount_target_group_desc}\" --vpc-id ${vpcid} | jq --raw-output '.GroupId') aws ec2 authorize-security-group-ingress --group-id ${mount_target_group_id} --protocol tcp --port 2049 --cidr ${cidr_block} TAG1=${vpcname%%-vpc}-private-ap-southeast-2a TAG2=${vpcname%%-vpc}-private-ap-southeast-2b TAG3=${vpcname%%-vpc}-private-ap-southeast-2c subnets=$(aws ec2 describe-subnets --filters \"Name=tag:Name,Values=$TAG1,$TAG2,$TAG3\" | jq --raw-output '.Subnets[].SubnetId') for subnet in ${subnets}; do echo \"creating mount target in \" $subnet aws efs create-mount-target --file-system-id ${fsid} --subnet-id ${subnet} --security-groups ${mount_target_group_id} done . efs-ocp-create.sh . #!/bin/bash # there should be only one fsid=$(aws efs describe-file-systems | jq -r '.FileSystems[0].FileSystemId') region=$(aws configure get region) if [ -z \"$fsid\" ] then echo \"&gt;&gt;&gt; could not find ocp-efs filesystem\" exit 1 fi cat &lt;&lt;EOF | oc apply -n default -f- apiVersion: v1 kind: ConfigMap metadata: name: efs-provisioner data: file.system.id: ${fsid} aws.region: ${region} provisioner.name: openshift.org/aws-efs dns.name: \"\" EOF oc -n default create serviceaccount efs-provisioner cat &lt;&lt;'EOF' | oc apply -f- --- kind: ClusterRole apiVersion: rbac.authorization.k8s.io/v1 metadata: name: efs-provisioner-runner rules: - apiGroups: [\"\"] resources: [\"persistentvolumes\"] verbs: [\"get\", \"list\", \"watch\", \"create\", \"delete\"] - apiGroups: [\"\"] resources: [\"persistentvolumeclaims\"] verbs: [\"get\", \"list\", \"watch\", \"update\"] - apiGroups: [\"storage.k8s.io\"] resources: [\"storageclasses\"] verbs: [\"get\", \"list\", \"watch\"] - apiGroups: [\"\"] resources: [\"events\"] verbs: [\"create\", \"update\", \"patch\"] - apiGroups: [\"security.openshift.io\"] resources: [\"securitycontextconstraints\"] verbs: [\"use\"] resourceNames: [\"hostmount-anyuid\"] --- kind: ClusterRoleBinding apiVersion: rbac.authorization.k8s.io/v1 metadata: name: run-efs-provisioner subjects: - kind: ServiceAccount name: efs-provisioner namespace: default roleRef: kind: ClusterRole name: efs-provisioner-runner apiGroup: rbac.authorization.k8s.io --- kind: Role apiVersion: rbac.authorization.k8s.io/v1 metadata: name: leader-locking-efs-provisioner rules: - apiGroups: [\"\"] resources: [\"endpoints\"] verbs: [\"get\", \"list\", \"watch\", \"create\", \"update\", \"patch\"] --- kind: RoleBinding apiVersion: rbac.authorization.k8s.io/v1 metadata: name: leader-locking-efs-provisioner subjects: - kind: ServiceAccount name: efs-provisioner namespace: default roleRef: kind: Role name: leader-locking-efs-provisioner apiGroup: rbac.authorization.k8s.io EOF cat &lt;&lt;'EOF' | oc apply -f- apiVersion: storage.k8s.io/v1 kind: StorageClass metadata: name: aws-efs provisioner: openshift.org/aws-efs parameters: gidMin: \"2048\" gidMax: \"2147483647\" gidAllocate: \"true\" EOF cat &lt;&lt;EOF | oc apply -n default -f- kind: Pod apiVersion: v1 metadata: name: efs-provisioner spec: serviceAccount: efs-provisioner containers: - name: efs-provisioner image: quay.io/external_storage/efs-provisioner:latest env: - name: PROVISIONER_NAME valueFrom: configMapKeyRef: name: efs-provisioner key: provisioner.name - name: FILE_SYSTEM_ID valueFrom: configMapKeyRef: name: efs-provisioner key: file.system.id - name: AWS_REGION valueFrom: configMapKeyRef: name: efs-provisioner key: aws.region - name: DNS_NAME valueFrom: configMapKeyRef: name: efs-provisioner key: dns.name optional: true volumeMounts: - name: pv-volume mountPath: /persistentvolumes volumes: - name: pv-volume nfs: server: ${fsid}.efs.${region}.amazonaws.com path: / EOF . ",
+    "url": "http://localhost:4000/notes/5cef9bdd-45a7-433b-80e0-9cdb110f89f1.html#efs",
+    "relUrl": "/notes/5cef9bdd-45a7-433b-80e0-9cdb110f89f1.html#efs"
+  },"19": {
+    "doc": "Efs",
+    "title": "Efs",
+    "hpath": "openshift.aws.efs",
+    "content": " ",
+    "url": "http://localhost:4000/notes/5cef9bdd-45a7-433b-80e0-9cdb110f89f1.html",
+    "relUrl": "/notes/5cef9bdd-45a7-433b-80e0-9cdb110f89f1.html"
+  },"20": {
+    "doc": "Springboot",
+    "title": "SpringBoot 2.2",
+    "hpath": "openshift.springboot",
+    "content": ". | https://maven.repository.redhat.com/ga/dev/snowdrop/snowdrop-dependencies/ | . support docs . | https://access.redhat.com/documentation/en-us/red_hat_support_for_spring_boot/2.2/ | https://access.redhat.com/documentation/en-us/red_hat_support_for_spring_boot/2.2/html-single/spring_boot_runtime_guide/index | https://access.redhat.com/documentation/en-us/red_hat_support_for_spring_boot/2.2/html-single/release_notes_for_spring_boot_2.2/index | . supported components . | https://access.redhat.com/articles/5099911 | . ",
+    "url": "http://localhost:4000/notes/7b2ce748-7d3a-463d-9c62-121dc71accd5.html#springboot-22",
+    "relUrl": "/notes/7b2ce748-7d3a-463d-9c62-121dc71accd5.html#springboot-22"
+  },"21": {
+    "doc": "Springboot",
+    "title": "Springboot",
+    "hpath": "openshift.springboot",
+    "content": " ",
+    "url": "http://localhost:4000/notes/7b2ce748-7d3a-463d-9c62-121dc71accd5.html",
+    "relUrl": "/notes/7b2ce748-7d3a-463d-9c62-121dc71accd5.html"
+  },"22": {
     "doc": "Serverless",
     "title": "Serverless",
     "hpath": "openshift.serverless",
     "content": " ",
-    "url": "http://localhost:4000/notes/733b8abb-93e5-4d4c-99d4-dbf112f54663.html",
-    "relUrl": "/notes/733b8abb-93e5-4d4c-99d4-dbf112f54663.html"
-  },"12": {
+    "url": "http://localhost:4000/notes/7d5cbf37-61c1-452c-a81f-ec39af2fc833.html",
+    "relUrl": "/notes/7d5cbf37-61c1-452c-a81f-ec39af2fc833.html"
+  },"23": {
+    "doc": "Creds",
+    "title": "IAM credentials",
+    "hpath": "openshift.iam.creds",
+    "content": "extract creds . oc get secret -n openshift-cloud-credential-operator cloud-credential-operator-iam-ro-creds -o yaml . ",
+    "url": "http://localhost:4000/notes/97d03974-3068-4153-84a4-c177799dcd61.html#iam-credentials",
+    "relUrl": "/notes/97d03974-3068-4153-84a4-c177799dcd61.html#iam-credentials"
+  },"24": {
+    "doc": "Creds",
+    "title": "Creds",
+    "hpath": "openshift.iam.creds",
+    "content": " ",
+    "url": "http://localhost:4000/notes/97d03974-3068-4153-84a4-c177799dcd61.html",
+    "relUrl": "/notes/97d03974-3068-4153-84a4-c177799dcd61.html"
+  },"25": {
     "doc": "Jenkins",
     "title": "Jenkins",
     "hpath": "openshift.jenkins",
     "content": " ",
-    "url": "http://localhost:4000/notes/9a475d07-22b2-4aa5-bbd4-a832281a9d5f.html",
-    "relUrl": "/notes/9a475d07-22b2-4aa5-bbd4-a832281a9d5f.html"
-  },"13": {
+    "url": "http://localhost:4000/notes/9be9c64c-3f21-423b-8db2-79a70d0b065c.html",
+    "relUrl": "/notes/9be9c64c-3f21-423b-8db2-79a70d0b065c.html"
+  },"26": {
+    "doc": "Dns",
+    "title": "DNS",
+    "hpath": "openshift.dns",
+    "content": "oc get dns.operator/default -o yaml . Configure operator . apiVersion: operator.openshift.io/v1 kind: DNS metadata: creationTimestamp: null finalizers: - dns.operator.openshift.io/dns-controller name: default spec: servers: - forwardPlugin: upstreams: - 8.8.8.8 - 8.8.4.4 name: redhat-io-dns zones: - redhat.io . debug . -- node dns issues -- oc debug node chroot /host crictl ps | grep dns-resolver crictl stop &lt;pod&gt; dig code.quarkus.io . ",
+    "url": "http://localhost:4000/notes/a1e2f220-4f6a-425f-949e-dca8fdc31823.html#dns",
+    "relUrl": "/notes/a1e2f220-4f6a-425f-949e-dca8fdc31823.html#dns"
+  },"27": {
+    "doc": "Dns",
+    "title": "Dns",
+    "hpath": "openshift.dns",
+    "content": " ",
+    "url": "http://localhost:4000/notes/a1e2f220-4f6a-425f-949e-dca8fdc31823.html",
+    "relUrl": "/notes/a1e2f220-4f6a-425f-949e-dca8fdc31823.html"
+  },"28": {
+    "doc": "Buildsv2",
+    "title": "Builds v2",
+    "hpath": "openshift.buildsv2",
+    "content": ". | https://github.com/shipwright-io/build | . ",
+    "url": "http://localhost:4000/notes/a1e7bfa0-14cf-4d95-8b5d-9fe3311fad6e.html#builds-v2",
+    "relUrl": "/notes/a1e7bfa0-14cf-4d95-8b5d-9fe3311fad6e.html#builds-v2"
+  },"29": {
+    "doc": "Buildsv2",
+    "title": "Buildsv2",
+    "hpath": "openshift.buildsv2",
+    "content": " ",
+    "url": "http://localhost:4000/notes/a1e7bfa0-14cf-4d95-8b5d-9fe3311fad6e.html",
+    "relUrl": "/notes/a1e7bfa0-14cf-4d95-8b5d-9fe3311fad6e.html"
+  },"30": {
     "doc": "Hashicorp",
     "title": "Hashicorp",
     "hpath": "hashicorp",
     "content": " ",
-    "url": "http://localhost:4000/notes/b3c620b1-23f2-436b-8887-1c2b0c0f5cc4.html",
-    "relUrl": "/notes/b3c620b1-23f2-436b-8887-1c2b0c0f5cc4.html"
-  },"14": {
+    "url": "http://localhost:4000/notes/a48e77a9-e833-48a6-8bd1-497e70e700d3.html",
+    "relUrl": "/notes/a48e77a9-e833-48a6-8bd1-497e70e700d3.html"
+  },"31": {
+    "doc": "Aws",
+    "title": "Aws",
+    "hpath": "openshift.aws",
+    "content": " ",
+    "url": "http://localhost:4000/notes/a9bf974c-6c11-4d44-b9cb-50f620f351fb.html",
+    "relUrl": "/notes/a9bf974c-6c11-4d44-b9cb-50f620f351fb.html"
+  },"32": {
     "doc": "Functions",
     "title": "Serverless Functions",
     "hpath": "openshift.serverless.functions",
     "content": "https://github.com/boson-project https://docs.google.com/document/d/1CI-U_sF7b4AbNvAJo2H4Q0Hhf9J2g0DBPTGXWDkWWKg . ",
     "url": "http://localhost:4000/notes/b9946a4e-b8b8-4e71-93eb-9e460625aed3.html#serverless-functions",
     "relUrl": "/notes/b9946a4e-b8b8-4e71-93eb-9e460625aed3.html#serverless-functions"
-  },"15": {
+  },"33": {
     "doc": "Functions",
     "title": "Functions",
     "hpath": "openshift.serverless.functions",
     "content": " ",
     "url": "http://localhost:4000/notes/b9946a4e-b8b8-4e71-93eb-9e460625aed3.html",
     "relUrl": "/notes/b9946a4e-b8b8-4e71-93eb-9e460625aed3.html"
-  },"16": {
+  },"34": {
+    "doc": "Tekton",
+    "title": "Tekton",
+    "hpath": "openshift.tekton",
+    "content": " ",
+    "url": "http://localhost:4000/notes/c30e16d8-a387-4b0a-aadd-38e8e405c252.html",
+    "relUrl": "/notes/c30e16d8-a387-4b0a-aadd-38e8e405c252.html"
+  },"35": {
     "doc": "dnsmasq",
     "title": "dnsmasq",
-    "hpath": "openshift.dnsmasq",
+    "hpath": "openshift.dns.dnsmasq",
     "content": "bugs . https://bugzilla.redhat.com/show_bug.cgi?id=1608571 . cd /etc/systemd/system/dnsmasq.service.d cat override.conf [Service] LimitNOFILE=65535 . ",
     "url": "http://localhost:4000/notes/d7e8f0f7-0121-4873-8277-e2e851f3c151.html",
     "relUrl": "/notes/d7e8f0f7-0121-4873-8277-e2e851f3c151.html"
-  },"17": {
+  },"36": {
+    "doc": "Iam",
+    "title": "Iam",
+    "hpath": "openshift.iam",
+    "content": " ",
+    "url": "http://localhost:4000/notes/ee2d89cb-5d3d-4f3d-bcb0-d90b8186bc78.html",
+    "relUrl": "/notes/ee2d89cb-5d3d-4f3d-bcb0-d90b8186bc78.html"
+  },"37": {
     "doc": "Vault",
     "title": "Hashicorp Vault",
     "hpath": "hashicorp.vault",
     "content": "https://www.openshift.com/blog/integrating-hashicorp-vault-in-openshift-4 https://medium.com/@salmaan.rashid/mtls-using-hashcorp-vaults-pki-secrets-f3ef6308bda3 . ",
     "url": "http://localhost:4000/notes/f4991726-6531-4809-a45f-ac5e63b3108c.html#hashicorp-vault",
     "relUrl": "/notes/f4991726-6531-4809-a45f-ac5e63b3108c.html#hashicorp-vault"
-  },"18": {
+  },"38": {
     "doc": "Vault",
     "title": "Vault",
     "hpath": "hashicorp.vault",
     "content": " ",
     "url": "http://localhost:4000/notes/f4991726-6531-4809-a45f-ac5e63b3108c.html",
     "relUrl": "/notes/f4991726-6531-4809-a45f-ac5e63b3108c.html"
-  },"19": {
+  },"39": {
     "doc": "Root",
     "title": "OpenShift Notes",
     "hpath": "root",
     "content": "Mike’s OpenShift notes . ",
     "url": "http://localhost:4000/#openshift-notes",
     "relUrl": "/#openshift-notes"
-  },"20": {
+  },"40": {
     "doc": "Root",
     "title": "Table of Contents",
     "hpath": "root",
     "content": " ",
     "url": "http://localhost:4000/#table-of-contents",
     "relUrl": "/#table-of-contents"
-  },"21": {
+  },"41": {
     "doc": "Root",
     "title": "Root",
     "hpath": "root",
